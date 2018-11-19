@@ -25,6 +25,7 @@ public abstract class Actuator {
     public String toString() {
         return "";
     }
+    
     public UUID getId() {
         return id;
     }

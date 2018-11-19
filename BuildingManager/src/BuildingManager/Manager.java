@@ -1,6 +1,7 @@
 package BuildingManager;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 /*
@@ -33,4 +34,15 @@ public class Manager {
         return buildings.get(id);
     }
     
+    @Override
+    public String toString() {
+       StringBuilder sb = new StringBuilder();
+       sb.append("The manager has the following buildings:\n");
+       for (Map.Entry<UUID, Building> entry : buildings.entrySet())
+       {
+           sb.append("--------------------\n").append(entry.getValue().toString()).append("\n");
+       }
+       sb.append("--------------------\n");
+       return sb.toString();
+    }
 }

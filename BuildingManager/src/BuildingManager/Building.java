@@ -6,6 +6,7 @@
 package BuildingManager;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -54,7 +55,27 @@ public class Building {
     
     @Override
     public String toString() {
-        return "";
+        
+       StringBuilder sb1 = new StringBuilder();
+       sb1.append("The building has the following sensors:\n");
+       for (Map.Entry<UUID, Sensor> entry : sensors.entrySet())
+       {
+           sb1.append(" o ").append(entry.getValue().getName()).append("\n");
+       }
+       
+       StringBuilder sb2 = new StringBuilder();
+       sb1.append("The building has the following actuators:\n");
+       for (Map.Entry<UUID, Actuator> entry : actuators.entrySet())
+       {
+          sb1.append(" o ").append(entry.getValue().getName()).append("\n");
+       }
+       
+        return  
+                name + "\n" +
+               "UUID" + id + "\n" +
+                location + "\n" + 
+                sb1.toString() +
+                sb2.toString();
     }
 
     public UUID getId() {
