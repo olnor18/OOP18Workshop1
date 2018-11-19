@@ -25,5 +25,11 @@ public class TestClass {
         
         System.out.println(manager.getBuilding(b1.getId()).getActuator(a1.getId()).toString());
         System.out.println(manager.getBuilding(b1.getId()).getSensor(s1.getId()).toString());
+        System.out.println(manager.toString());
+        System.out.println(manager.getBuildings().size());
+        manager.removeBuilding(b2.getId());
+        System.out.println(manager.getBuildings().size());
+        System.out.println(manager.toString());
+        
     }
 }
