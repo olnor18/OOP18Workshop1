@@ -12,7 +12,7 @@ package BuildingManager;
 public class CO2Sensor extends Sensor {
 
     private double value = Math.random() * 100;
-    private String unit = "ppm^2";
+    private String unit = "ppm\u00B2";
     
     public CO2Sensor(String name, String location) {
         super(name, location);

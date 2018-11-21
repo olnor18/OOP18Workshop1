@@ -11,19 +11,18 @@ package BuildingManager;
  */
 public class TemperatureSensor extends Sensor {
 
-    private double value = Math.random()*100 - Math.random()*100;
-    private String unit = "\u00B0"+"C";
+    private double value = Math.random() * 100 - Math.random() * 100;
+    private String unit = "\u00B0" + "C";
 
     public TemperatureSensor(String name, String location) {
         super(name, location);
     }
-    
+
     @Override
-    public String toString(){
-        return value + " " + unit;
+    public String toString() {
+        return this.value + " " + this.unit;
     }
 
-    
     public double getValue() {
         return value;
     }
