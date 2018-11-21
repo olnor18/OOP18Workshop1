@@ -10,16 +10,18 @@ package BuildingManager;
  * @author AleksanderSTUD
  */
 public class DetailActuator extends Actuator {
-    
-    private double value = Math.random(); //random value for test
-    private double desiredValue; 
-    
+
+    private double value;
+    private double desiredValue;
+
     public DetailActuator(String name, String location) {
         super(name, location);
+        this.value = Math.random();
     }
-    
-    public String toString(){
-        return value+"";
+
+    @Override
+    public String toString() {
+        return this.value + "";
     }
 
     public double getValue() {
@@ -33,6 +35,5 @@ public class DetailActuator extends Actuator {
     public void setDesiredValue(double desiredValue) {
         this.desiredValue = desiredValue;
     }
-    
-    
+
 }

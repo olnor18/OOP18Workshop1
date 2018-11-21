@@ -10,16 +10,17 @@ package BuildingManager;
  * @author AleksanderSTUD
  */
 public class BooleanActuator extends Actuator {
-    
+
     private boolean value;
     private boolean desiredValue;
-    
+
     public BooleanActuator(String name, String location) {
         super(name, location);
     }
-    
-    public String toString(){
-        return value+"";
+
+    @Override
+    public String toString() {
+        return value + "";
     }
 
     public boolean isValue() {
@@ -33,7 +34,5 @@ public class BooleanActuator extends Actuator {
     public void setDesiredValue(boolean desiredValue) {
         this.desiredValue = desiredValue;
     }
-    
-    
-    
+
 }

@@ -12,21 +12,20 @@ import java.util.UUID;
  * @author AleksanderSTUD
  */
 public abstract class Sensor {
+
     private UUID id;
     private String name;
     private String location;
-    
+
     public Sensor(String name, String location) {
         this.name = name;
         this.location = location;
         id = UUID.randomUUID();
     }
-    
+
     @Override
-    public String toString() {
-        return "";
-    }
-    
+    public abstract String toString();
+
     public UUID getId() {
         return id;
     }
@@ -39,5 +38,4 @@ public abstract class Sensor {
         return location;
     }
 
-    
 }

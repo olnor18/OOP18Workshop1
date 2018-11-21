@@ -6,6 +6,7 @@
 package BuildingManager;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -28,8 +29,9 @@ public class Building {
         
     }
 
-    public void addSensor(Sensor s){
+    public UUID addSensor(Sensor s){
         sensors.put(s.getId(), s);
+        return s.getId();
     }
     
     public void removeSensor(UUID id) {
@@ -40,8 +42,9 @@ public class Building {
         return sensors.get(id);
     }
     
-    public void addActuator(Actuator a){
+    public UUID addActuator(Actuator a){
         actuators.put(a.getId(), a);
+        return a.getId();
     }
     
     public void removeActuator(UUID id){
@@ -54,7 +57,27 @@ public class Building {
     
     @Override
     public String toString() {
-        return "";
+        
+       StringBuilder sb1 = new StringBuilder();
+       sb1.append("The building has the following sensors:\n");
+       for (Map.Entry<UUID, Sensor> entry : sensors.entrySet())
+       {
+           sb1.append("\u2B29 ").append(entry.getValue().getName()).append(" = \t").append(entry.getValue().toString()).append("\n");
+       }
+       
+       StringBuilder sb2 = new StringBuilder();
+       sb1.append("The building has the following actuators:\n");
+       for (Map.Entry<UUID, Actuator> entry : actuators.entrySet())
+       {
+          sb1.append("\u2B29 ").append(entry.getValue().getName()).append(" = \t").append(entry.getValue().toString());
+       }
+       
+        return  
+                "Building name: \t"+ name + "\n" +
+               "UUID: \t\t" + id + "\n" +
+                "Location: \t" + location + "\n\n" + 
+                sb1.toString() +
+                sb2.toString();
     }
 
     public UUID getId() {
